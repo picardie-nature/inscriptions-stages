@@ -1,0 +1,68 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html dir="ltr" lang="fr" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>Picardie Nature - Inscriptions aux stages naturalistes</title>
+	<link rel="stylesheet" type="text/css" href="http://www.picardie-nature.org/deco/style_20120216.css" media="screen" />
+	<link rel="stylesheet" type="text/css" href="http://www.picardie-nature.org/deco/site.css" media="screen" />
+	<link rel="stylesheet" type="text/css" href="http://www.picardie-nature.org/deco/accueil.css" media="screen" />
+</head>
+<body>
+<style>
+.errorlist {
+	background-color: #ffaaaa;
+	color: white;
+}
+div.field {
+	padding-bottom: 10px;
+}
+form { padding-left: 30px; }
+.errorlist li { color: red; }
+</style>
+  <div id="globcont">
+    <div id="bloc-haut">
+      <div id="b-haut-1cont">
+      <div id="b-haut-1">
+      <div id="b-haut-1in">
+      
+        <div id="b-haut-logo">
+		<a href="http://www.picardie-nature.org"><img src="http://www.picardie-nature.org/deco/logo_top.png" alt="Picardie Nature"/></a>
+        </div>
+        <div id="b-haut-pancartes">
+        	<img src="http://www.picardie-nature.org/deco/pancartes_accueil.png" />
+        </div>
+      </div>
+      </div>
+      </div> 
+
+      <div id="b-haut-2">&nbsp;</div>
+    </div>
+    <!-- bloc-haut -->
+    <h1>Inscription au stage d'initiation naturaliste</h1>
+    <form method="post" action="/">{% csrf_token %}
+    	{% for field in form %}
+		<div class="field">
+			<div class="field_title">{{field.label_tag}}</div>
+			<div class="field_errors">{{field.errors}}</div>
+			<div class="field_input">{{field}}</div>
+		</div>
+	{% endfor %}
+	<input type="submit" value="Envoyer votre inscription"/>
+    </form>
+</div>
+
+<!-- Piwik --> 
+<script type="text/javascript">
+var pkBaseURL = (("https:" == document.location.protocol) ? "https://stats.picardie-nature.org/" : "http://stats.picardie-nature.org/");
+document.write(unescape("%3Cscript src='" + pkBaseURL + "piwik.js' type='text/javascript'%3E%3C/script%3E"));
+</script><script type="text/javascript">
+try {
+var piwikTracker = Piwik.getTracker(pkBaseURL + "piwik.php", 5);
+piwikTracker.trackPageView();
+piwikTracker.enableLinkTracking();
+} catch( err ) {}
+</script><noscript><p><img src="http://stats.picardie-nature.org/piwik.php?idsite=5" style="border:0" alt="" /></p></noscript>
+<!-- End Piwik Tracking Code -->
+
+</body>
+</html>
