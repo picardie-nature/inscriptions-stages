@@ -100,13 +100,16 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.messages.middleware.MessageMiddleware',
 )
 
-ROOT_URLCONF = 'inscription_stages_initations.urls'
+#ROOT_URLCONF = 'inscription_stages_initations.urls'
+
+ROOT_URLCONF = 'urls'
 
 TEMPLATE_DIRS = (
     # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
-    '/chemin_vers/stages_initation/templates'
+    '/chemin_vers/stages_initation/templates',
+    '/home/nicolas/picnat/stages_initiation/templates'
 )
 
 INSTALLED_APPS = (
