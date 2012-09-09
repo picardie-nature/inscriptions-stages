@@ -1,4 +1,4 @@
-from inscriptions.models import Inscrit
+from inscriptions.models import Inscrit,InscritAdmin
 from django.contrib import admin
 
-admin.site.register(Inscrit)
+admin.site.register(Inscrit,InscritAdmin)

@@ -1,6 +1,10 @@
 #!/usr/bin/python
 # -*- encoding: utf-8 -*-
 from django.db import models
+from django.contrib import admin
+
+class InscritAdmin(admin.ModelAdmin):
+	list_display = ['nom','prenom','stage','adherent']
 
 class Inscrit(models.Model):
 	nom = models.CharField(max_length=40, verbose_name="Nom")
