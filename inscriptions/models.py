@@ -49,7 +49,7 @@ class Inscrit(models.Model):
 	adresse = models.TextField(verbose_name="Adresse")
 	email = models.EmailField(verbose_name="Adresse email")
 	telephone = models.CharField(max_length=10, verbose_name="Numéro de téléphone")
-	stage = models.IntegerField(choices = ((2,'Aisne'),(60,'Oise'),(80,'Somme')), verbose_name="Département où vous souhaitez participer")
+	stage = models.IntegerField(choices = ((2,'Aisne'),(80,'Somme')), verbose_name="Département où vous souhaitez participer")
 	pratique_naturaliste = models.TextField(verbose_name="Pratiquez-vous une activitée naturaliste ?", blank=True)
 	pref_oiseaux = models.BooleanField(verbose_name="Intéressé par les oiseaux")
 	pref_mam_terr = models.BooleanField(verbose_name="Intéressé par les mammifères terrestres")
