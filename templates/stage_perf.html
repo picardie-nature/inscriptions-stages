@@ -1,0 +1,119 @@
+{% include "head.html" %}
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <h1>Pré-inscription aux stages de perfectionnement et journée d'études</h1>
+    <form method="post" action="/">{% csrf_token %}
+    	{% for field in form %}
+		<div class="field">
+			<div class="field_title">{{field.label_tag}}</div>
+			<div class="field_errors">{{field.errors}}</div>
+			<div class="field_input">{{field}}</div>
+		</div>
+	{% endfor %}
+	<input type="submit" value="Envoyer votre inscription"/>
+	<style>
+		.desc {
+			font-size: 13px;
+			background-color: white;
+			margin-left: 25px;
+			padding: 10px;
+			display:none;
+		}
+		.lieu {
+			padding: 10px;
+			font-style: italic;
+			font-weight: bold;
+		}
+	</style>
+	<script>
+	var data = {
+		stage_papillons: {
+			date: "01/06/2013",
+			desc: "Ce stage de formation vous permettra d'apprendre à identifier les papillons de jour. Couplé à un volet étude, ce sera l'occasion d'inventorier ces insectes dans un secteur peu connu. En soirée, une séance d'initiation à la recherche et l'identification des papillons de nuit sera organisée.",
+			lieu: "lieu précis communiqué à l'inscription, secteur d'Aumale (76)"
+		},
+		stage_chant_des_oiseaux: {
+			date: "18/05/2013",
+			desc: "Stage visant à découvrir le chant des différentes espèces peuplant notre région et plus particulièrement de nos forêts. Vous vous familiariserez avec leur diversité et apprendrez à les reconnaître.",
+			lieu: "lieu précis communiqué à l'inscription, Chauny ou Noyon (02/60)"
+		},
+		stage_chauves_souris: {
+			date: "01/06/2013 - 02/06/2013",
+			desc: "Ce stage de deux jours est ouvert à toutes personnes désireuses de se former à l'étude des chauves-souris via l'analyse des ultrasons.",
+			lieu: "lieu précis communiqué à l'inscription, Pays de Bray (60)"
+		},
+		stage_etude_vexin: {
+			date: "15/06/13 & 16/06",
+			desc: "Ce week-end d'études est une manifestation majeure de l'année : des inventaires complets de la faune sauvage seront conduits sur différents groupes : papillons, libellules, oiseaux. Naturalistes et autres curieux de nature, venez nous rejoindre ! Participation à 1 ou 2 jours, hébergement possible.",
+			lieu: "lieu précis communiqué à l'inscription, Sud-Ouest de l'Oise - Vexin (60)"
+		},
+		journee_etude_marne: {
+			date: "06/07/2013",
+			desc: "Le but de cette journée est d'améliorer les connaissances sur la faune des coteaux de la Marne. Plusieurs groupes seront étudiés, en particulier les insectes (papillons, criquets, coccinelles....). C'est aussi l'occasion de s'initier à la détermination de ces différents groupes d'animaux. Possibilité de finir la journée par le stage Clicnat.",
+			lieu: "lieu précis communiqué à l'inscription, secteur Château-Thierry (02)"
+		},
+		stage_clicnat_aisne: {
+			date: "06/07/2013",
+			desc: "Clicnat est une base de données régionale sur la faune sauvage. Ce stage permettra aux utilisateurs de Clicnat de mieux maîtriser les fonctionnalités de cet outil : comment saisir des données sur un polygone, extraire mes données, quel est leur devenir. Vous trouverez réponse à toutes vos questions.",
+			lieu: "lieu précis communiqué à l'inscription, secteur Château-Thierry (02)"
+		},
+		stage_plantes_animaux: {
+			date: "13/07/2013",
+			desc: "Ce stage thématique vous permettra de mieux appréhender les relations entre les animaux sauvages (ex : insectes) et les plantes sauvages et cultivées de manière à mieux prospecter dans la nature et dans son propre jardin, au naturel, la faune qui nous entoure.",
+			lieu: "lieu précis communiqué lors de l'inscription, Somme"
+		},
+		stage_orthopteres: {
+			date: "14/07/2013",
+			desc: "Cette journée sera à destination des personnes souhaitant augmenter leur connaissance sur les Orthoptères. Elle sera aussi l'occasion, pour les personnes plus confirmées d'améliorer leur compétence sur ce groupe et de mettre à profit celles-ci pour augmenter les données sur ce secteur.",
+			lieu: "lieu précis communiqué à l'inscription, secteur de Braine (02)"
+		},
+		journee_araignees: {
+			date: "31/08/2013",
+			desc: "En plus de découvrir différentes espèces, leurs modes de vie, leurs techniques de chasse, leurs habitats.. vous découvrirez les activités du réseau araignées de Picardie Nature, participerez avec lui à l'étude de ces animaux et comprendrez mieux l'intérêt de protéger ces animaux dans notre région.",
+			lieu: "lieu précis communiqué à l'inscription, secteur Chantilly (60)"
+		},
+		journee_coccinelle: {
+			date: "31/08/2013",
+			desc: "Sortie d'étude du réseau coccinelles : inventorions un maximum d'espèces et recherchons d'autres espèces très rares ou disparues en Picardie : Myzia oblonguttata (liée aux forêts de Pin sylvestre), Coccinella magnifica (liée aux zones de fourmilières), Exochomus nigromaculatus (liée aux landes). Possibilité d'un stage Clicnat à la suite.",
+			lieu: "lieu précis communiqué à l'inscription - secteur de Chantilly (60)"
+		},
+		stage_clicnat_oise: {
+			date: "31/08/2013",
+			desc: "Ce stage permettra aux utilisateurs de Clicnat de mieux maîtriser les fonctionnalités de cet outil : comment saisir des données sur un polygone, extraire mes données, quel est leur devenir. Vous trouverez réponse à toutes vos questions. Événement à la suite de la journée coccinelles",
+			lieu: "lieu précis communiqué à l'inscription, secteur au sud de l'Oise"
+		},
+		stage_continuite_eco: {
+			date: "28/09/2013",
+			desc: "La Réserve naturelle régionale des Larris et Tourbières de Saint-Pierre-ès-Champs, site préservé par le Conservatoire d'Espaces Naturels de Picardie : découvrons les réseaux de sites au travers son histoire et ses paysages et abordons leurs problématiques et les aménagements envisagés.",
+			lieu: "Secteur de Saint-Pierre es Champs dans le Pays de Bray (60)"
+		},
+		journee_etude_papillons: {
+			date: "01/09/2013",
+			desc: "Partez à la recherche des papillons des coteaux et des zones humides de la vallée de la Marne. Vous aurez la possibilité de rester le soir pour assister à une séance d'identification des papillons de nuit.",
+			lieu: "lieu précis communiqué à l'inscription, secteur de Pavant (02)"
+		},
+		stage_odonates: {
+			date: "22/06/2013",
+			desc: "Apprendre à étudier les libellules",
+			lieu: "Ce stage vous permettra d'acquérir les connaissances nécessaires sur les Odonates (écologie, comportement, habitats, détermination des espèces...), afin de participer à l'étude et à la protection de ce groupe en Picardie."
+		}
+	};
+	
+	sorties = ['stage_continuite_eco','stage_clicnat_oise','journee_coccinelle','journee_araignees','stage_orthopteres','stage_plantes_animaux','stage_clicnat_aisne','journee_etude_marne','stage_etude_vexin','stage_chauves_souris','stage_chant_des_oiseaux','stage_papillons','journee_etude_papillons','stage_odonates'];
+
+	function add_infos() {
+		for (var i=0; i<sorties.length; i++) {
+			var e = $('#id_'+sorties[i]);
+			var p = e.parent();
+			p.append("date : "+data[sorties[i]].date+' <a href="javascript:;" class="bplus">plus d\'informations</a>');
+			p.append("<div class=desc>"+data[sorties[i]].desc+"<div class=lieu>"+data[sorties[i]].lieu+"</div>");
+		}
+		$('.bplus').click(function () {
+			$(this).toggle();
+			var p = $(this).parent();
+			p.children('.desc').toggle();
+		});
+	}
+	add_infos();
+	</script>
+    </form>
+{% include "foot.html" %}
