@@ -17,8 +17,8 @@ urlpatterns = patterns('',
 
 	# Uncomment the next line to enable the admin:
 	url(r'^admin/', include(admin.site.urls)),
-	#url(r'^$', 'inscriptions.views.stage_perf'),
-	url(r'^$', 'inscriptions.views.index'),
+	url(r'^$', 'inscriptions.views.stage_perf'),
+	#url(r'^$', 'inscriptions.views.index'),
 	url(r'^merci/', 'inscriptions.views.merci'),
 	url(r'^merci_perf/', 'inscriptions.views.merci_perf'),
 	url(r'^stage_perf/', 'inscriptions.views.stage_perf'),
