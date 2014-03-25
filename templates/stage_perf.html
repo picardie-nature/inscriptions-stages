@@ -1,6 +1,6 @@
 {% include "head.html" %}
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-    <h1>Pré-inscription aux stages de perfectionnement et journées d'études</h1>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <h1>Pré-inscription aux stages de perfectionnement et journées d'études 2014</h1>
 	<p>(Vous pouvez choisir un ou plusieurs stages/journées d'études)</p>
     <form method="post" action="/">{% csrf_token %}
     	{% for field in form %}
@@ -82,6 +82,11 @@
 			desc: "Venez contribuer à l'amélioration des connaissances sur la faune des coteaux de la Marne, milieux extrêmement menacés et à protéger. Nous étudierons différents groupes, notamment les insectes (papillons, criquets, coccinelles...) et initierons les plus novices à la détermination de ces animaux.",
 			lieu: "secteur Château-Thierry (02)"
 		},
+		stage_cocc_6sept: {
+			date: "06/09/2014",
+			desc: "stage et journée d’études Coccinelles",
+			lieu: "Pays de Bray (60)"
+		},
 		stage_tvb_27sept: {
 			date: "27/09/2014",
 			desc: "Partez à la découverte de la vallée du Liger. Son histoire et ses paysages permettront d'illustrer ce que l'on nomme les réseaux de sites, leurs problématiques et les aménagements qui peuvent être envisagés. Pour que nos aménagements ne deviennent pas tous des obstacles pour la faune sauvage.",
@@ -89,7 +94,7 @@
 		}
 	};
 	
-	sorties = ['stage_bd_5avril','stage_vipere_17mai','stage_chant_24mai','stage_retz_31mai','inv_nat_7au9juin','inv_nat_14juin_ours','stage_laon_21juin','stage_pap_comp_28juin','stage_rel_plante_insect','stage_etud_orthop_26juillet','journee_marne_23aout','stage_tvb_27sept'];
+	sorties = ['stage_bd_5avril','stage_vipere_17mai','stage_chant_24mai','stage_retz_31mai','inv_nat_7au9juin','inv_nat_14juin_ours','stage_laon_21juin','stage_pap_comp_28juin','stage_rel_plante_insect','stage_etud_orthop_26juillet','journee_marne_23aout','stage_cocc_6sept','stage_tvb_27sept'];
 
 	function add_infos() {
 		for (var i=0; i<sorties.length; i++) {
