@@ -97,7 +97,7 @@ Commentaire :
 """ % form.cleaned_data
 
 			send_mail("Confirmation pré-inscription au stage naturaliste", message, "support@picardie-nature.org", [form.cleaned_data['email']], fail_silently=False)
-			send_mail(u"Pré-inscription stage naturaliste de %(prenom)s %(nom)s"%form.cleaned_data, message_equipe, "support@picardie-nature.org", ["observatoire@picardie-nature.org"], fail_silently=True)
+			send_mail(u"Pré-inscription stage naturaliste de %(prenom)s %(nom)s [%(stage)02d]"%form.cleaned_data, message_equipe, "support@picardie-nature.org", ["observatoire@picardie-nature.org"], fail_silently=True)
 			return HttpResponseRedirect('/merci')
 	else:
 		form = InscritForm()
