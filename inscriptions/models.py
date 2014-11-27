@@ -47,6 +47,8 @@ class Inscrit(models.Model):
 	nom = models.CharField(max_length=40, verbose_name="Nom")
 	prenom = models.CharField(max_length=40, verbose_name=u"Prénom")
 	adresse = models.TextField(verbose_name="Adresse")
+	code_postal = models.CharField(max_length=10, verbose_name=u"Code postal")
+	ville = models.CharField(max_length=80, verbose_name=u"Ville")
 	email = models.EmailField(verbose_name="Adresse email")
 	telephone = models.CharField(max_length=10, verbose_name="Numéro de téléphone")
 	stage = models.IntegerField(choices = ((2,'Aisne'),(60,'Oise'),(80,'Somme')), verbose_name="Département où vous souhaitez participer")
