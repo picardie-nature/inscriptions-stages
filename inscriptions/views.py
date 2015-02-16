@@ -63,10 +63,13 @@ def index(request):
 
 Nous avons enregistré votre pré-inscription.
 
-Vous allez bientôt recevoir un courrier vous présentant le stage et qui vous indiquera aussi comment confirmer votre inscription.
+Toutefois, à ce jour, le nombre de pré-inscrits étant particulièrement élevé, votre place à cette session n'est pas garantie.
+Nous gardons votre inscription sur liste d'attente notamment en cas de désistement.
+
+Dans tous les cas, nous ne manquerons pas de vous informer sur la possibilité de votre participation au stage (au plus tard début mars).
 
 À bientôt,
-L'équipe de Picardie Nature.
+L'équipe de Picardie Nature. 
 """
 			message_equipe = u"""Nouvel inscrit au stage naturaliste %(stage)02d :
 Nom, prénom : %(nom)s %(prenom)s
